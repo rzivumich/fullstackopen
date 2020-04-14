@@ -1,0 +1,3 @@
+[submodule "part1"]
+	path = part1
+	url = https://github.com/rzivumich/fullstackopen

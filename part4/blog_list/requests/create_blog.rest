@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI1ZWY3YzUwMWI1MzQ5Nzk4Y2Q3ZjdiODIiLCJpYXQiOjE1OTMzOTAzNDR9.-s44daswXJRSNhP2kmmSj-ecmBJt3704_D0ThBYvGZc
+
+{
+    "title": "First Blog",
+    "Author": "Matti Luukkainen",
+    "url": "mluukkainenblog.com",
+    "likes": 7
+}

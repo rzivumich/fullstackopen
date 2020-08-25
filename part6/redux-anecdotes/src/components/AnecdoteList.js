@@ -2,12 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addVote } from '../reducers/anecdoteReducer'
 import { notificationVoted, removeNotification } from '../reducers/notificationReducer'
-import anecdoteService from '../services/anecdotes'
 
 const Anecdotes = () => {
     const dispatch = useDispatch()
     const anecdotes = useSelector(({ anecdote, filter}) => {
-      console.log(anecdote)
       if ( filter === '' ) {
         return anecdote
       }
@@ -16,13 +14,10 @@ const Anecdotes = () => {
         .filter((anecdotes) =>
           anecdotes.content.toLowerCase().includes(filter.toLowerCase())
         )
-        //.sort((a,b) => b.votes - a.votes)
     }
   })
 
-    const vote = async (anecdote) => {
-      console.log(anecdote)
-      
+    const vote = async (anecdote) => {      
       dispatch(addVote(anecdote))
       dispatch(notificationVoted(anecdote.content))
       setTimeout(function(){dispatch(removeNotification())}, 5000)
